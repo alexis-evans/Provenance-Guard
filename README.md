@@ -6,6 +6,10 @@ appeal an assessment. It also includes reviewed provenance certificates and
 a small analytics dashboard. A result describes writing patterns; it does not prove
 who wrote the text.
 
+## Demo Video
+
+https://github.com/user-attachments/assets/4058403b-1fc6-4e92-9bf8-f4397973259d
+
 ## Setup and use
 
 From the project folder:
