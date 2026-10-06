@@ -1,0 +1,17 @@
+[
+  {
+    "name": "formal_ai_style",
+    "source": "Course assignment illustrative AI-style example; actual authorship is not independently verified.",
+    "text": "Artificial intelligence represents a transformative paradigm shift in modern society. It is important to note that while the benefits of AI are numerous, it is equally essential to consider the ethical implications. Furthermore, stakeholders across various sectors must collaborate to ensure responsible deployment."
+  },
+  {
+    "name": "informal_human_style",
+    "source": "Course assignment illustrative human-style example; actual authorship is not independently verified.",
+    "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there"
+  },
+  {
+    "name": "borderline_formal",
+    "source": "Course assignment borderline formal-human example; actual authorship is not independently verified.",
+    "text": "The relationship between monetary policy and asset price inflation has been extensively studied in the literature. Central banks face a fundamental tension between their mandate for price stability and the unintended consequences of prolonged low interest rates on equity and real estate valuations."
+  }
+]

@@ -1,0 +1,458 @@
+{
+  "verified_at": "2026-10-05T02:49:15.225862Z",
+  "transport": "Real loopback HTTP and live Groq",
+  "model": "qwen/qwen3.8-27b",
+  "inputs": "First three cases in examples/m4_inputs.json",
+  "submissions": [
+    {
+      "ai_score": 0.9027472527472528,
+      "attribution": "likely_ai",
+      "confidence": 0.9027472527472528,
+      "content_id": "e0240490-f01c-4864-b46d-f56ded02bb5a",
+      "created_at": "2026-10-05T02:49:14.455271Z",
+      "creator_id": "m5-demo-generated_remote_work",
+      "label": "This text shows strong signs of AI generation. This automated assessment can be wrong. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits extreme repetitive structure, using the identical syntactic frame 'Remote work [verb] [noun] for [role] seeking to improve [X] and [Y] across [Z]' five times. This mechanical parallelism, combined with vague, generic corporate buzzwords and lack of specific detail, is a hallmark of AI-generated filler content.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.95,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.006756756756756757,
+            "repetition": 0.5079365079365079,
+            "sentence_count": 5,
+            "sentence_cv": 0.02197802197802198,
+            "ttr": 0.5714285714285714,
+            "uniformity": 0.9706959706959707,
+            "word_count": 91
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.8318681318681318,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "uncertainty_reasons": []
+    },
+    {
+      "ai_score": 0.02666666666666668,
+      "attribution": "likely_human",
+      "confidence": 0.9733333333333333,
+      "content_id": "7c19da81-df77-4283-9e08-727d59a512ce",
+      "created_at": "2026-10-05T02:49:14.832597Z",
+      "creator_id": "m5-demo-austen_dialogue",
+      "label": "This text shows strong signs of human writing. This automated assessment does not verify authorship. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text is a verbatim excerpt from Jane Austen's 'Pride and Prejudice.' It exhibits 19th-century literary syntax, specific historical context, and a distinct authorial voice that predates modern AI generation. The structure is coherent and stylistically consistent with the original human-authored source.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.0,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.040625,
+            "repetition": 0.22222222222222232,
+            "sentence_count": 10,
+            "sentence_cv": 1.120683860605084,
+            "ttr": 0.7,
+            "uniformity": 0.0,
+            "word_count": 123
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.0666666666666667,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "uncertainty_reasons": []
+    },
+    {
+      "ai_score": 0.20055209897864937,
+      "attribution": "uncertain",
+      "confidence": 0.7994479010213507,
+      "content_id": "6a86f037-8c0e-49ab-ac57-198423201a45",
+      "created_at": "2026-10-05T02:49:15.215317Z",
+      "creator_id": "m5-demo-darwin_formal",
+      "label": "We cannot confidently determine whether this text is human-written or AI-generated. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits the distinct 19th-century rhetorical style of Charles Darwin, specifically from 'On the Origin of Species.' It features complex sentence structures, formal diction, and specific scientific arguments regarding species distribution and geological history. The voice is consistent with historical human prose, lacking the generic phrasing or repetitive patterns typical of AI generation.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.0,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.014285714285714285,
+            "repetition": 0.15555555555555556,
+            "sentence_count": 4,
+            "sentence_cv": 0.2628068777357606,
+            "ttr": 0.73,
+            "uniformity": 0.6495908296856525,
+            "word_count": 122
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.5013802474466234,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "uncertainty_reasons": [
+        "signal_disagreement",
+        "middle_range"
+      ]
+    }
+  ],
+  "appeal_response": {
+    "status": 201,
+    "body": {
+      "appeal_id": "65ac389a-d8aa-4f65-b009-3566fc7d9479",
+      "content_id": "6a86f037-8c0e-49ab-ac57-198423201a45",
+      "created_at": "2026-10-05T02:49:15.219491Z",
+      "message": "Appeal received. This assessment is under review.",
+      "status": "under_review"
+    },
+    "retry_after": null
+  },
+  "duplicate_response": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "appeal_exists",
+        "message": "This submission already has an open appeal."
+      }
+    },
+    "retry_after": null
+  },
+  "content_before": {
+    "ai_score": 0.20055209897864937,
+    "appeal": null,
+    "attribution": "uncertain",
+    "confidence": 0.7994479010213507,
+    "content_id": "6a86f037-8c0e-49ab-ac57-198423201a45",
+    "created_at": "2026-10-05T02:49:15.215317Z",
+    "creator_id": "m5-demo-darwin_formal",
+    "label": "We cannot confidently determine whether this text is human-written or AI-generated. Creators can appeal.",
+    "label_version": "transparency-v1",
+    "policy_version": "heuristic-v1",
+    "review_notice": null,
+    "signals": {
+      "groq": {
+        "details": {
+          "model": "qwen/qwen3.8-27b",
+          "prompt_version": "groq-v1",
+          "rationale": "The text exhibits the distinct 19th-century rhetorical style of Charles Darwin, specifically from 'On the Origin of Species.' It features complex sentence structures, formal diction, and specific scientific arguments regarding species distribution and geological history. The voice is consistent with historical human prose, lacking the generic phrasing or repetitive patterns typical of AI generation.",
+          "reasoning_effort": "none"
+        },
+        "error_code": null,
+        "name": "groq",
+        "score": 0.0,
+        "status": "ok"
+      },
+      "stylometry": {
+        "details": {
+          "punctuation_density": 0.014285714285714285,
+          "repetition": 0.15555555555555556,
+          "sentence_count": 4,
+          "sentence_cv": 0.2628068777357606,
+          "ttr": 0.73,
+          "uniformity": 0.6495908296856525,
+          "word_count": 122
+        },
+        "error_code": null,
+        "name": "stylometry",
+        "score": 0.5013802474466234,
+        "status": "ok"
+      }
+    },
+    "status": "classified",
+    "uncertainty_reasons": [
+      "signal_disagreement",
+      "middle_range"
+    ],
+    "updated_at": "2026-10-05T02:49:15.215317Z"
+  },
+  "content_after": {
+    "ai_score": 0.20055209897864937,
+    "appeal": {
+      "appeal_id": "65ac389a-d8aa-4f65-b009-3566fc7d9479",
+      "created_at": "2026-10-05T02:49:15.219491Z",
+      "creator_reasoning": "This is a public-domain passage by Charles Darwin, not generated prose. Please review the historical source and the effect of formal writing on the structural signal."
+    },
+    "attribution": "uncertain",
+    "confidence": 0.7994479010213507,
+    "content_id": "6a86f037-8c0e-49ab-ac57-198423201a45",
+    "created_at": "2026-10-05T02:49:15.215317Z",
+    "creator_id": "m5-demo-darwin_formal",
+    "label": "We cannot confidently determine whether this text is human-written or AI-generated. Creators can appeal.",
+    "label_version": "transparency-v1",
+    "policy_version": "heuristic-v1",
+    "review_notice": "The creator has contested this assessment. It is under review.",
+    "signals": {
+      "groq": {
+        "details": {
+          "model": "qwen/qwen3.8-27b",
+          "prompt_version": "groq-v1",
+          "rationale": "The text exhibits the distinct 19th-century rhetorical style of Charles Darwin, specifically from 'On the Origin of Species.' It features complex sentence structures, formal diction, and specific scientific arguments regarding species distribution and geological history. The voice is consistent with historical human prose, lacking the generic phrasing or repetitive patterns typical of AI generation.",
+          "reasoning_effort": "none"
+        },
+        "error_code": null,
+        "name": "groq",
+        "score": 0.0,
+        "status": "ok"
+      },
+      "stylometry": {
+        "details": {
+          "punctuation_density": 0.014285714285714285,
+          "repetition": 0.15555555555555556,
+          "sentence_count": 4,
+          "sentence_cv": 0.2628068777357606,
+          "ttr": 0.73,
+          "uniformity": 0.6495908296856525,
+          "word_count": 122
+        },
+        "error_code": null,
+        "name": "stylometry",
+        "score": 0.5013802474466234,
+        "status": "ok"
+      }
+    },
+    "status": "under_review",
+    "uncertainty_reasons": [
+      "signal_disagreement",
+      "middle_range"
+    ],
+    "updated_at": "2026-10-05T02:49:15.219491Z"
+  },
+  "audit_events": [
+    {
+      "ai_score": 0.9027472527472528,
+      "appeal_id": null,
+      "appeal_reasoning": null,
+      "attribution": "likely_ai",
+      "confidence": 0.9027472527472528,
+      "content_id": "e0240490-f01c-4864-b46d-f56ded02bb5a",
+      "created_at": "2026-10-05T02:49:14.455271Z",
+      "creator_id": "m5-demo-generated_remote_work",
+      "event_id": 40,
+      "event_type": "decision",
+      "label": "This text shows strong signs of AI generation. This automated assessment can be wrong. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "original_decision_event_id": null,
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits extreme repetitive structure, using the identical syntactic frame 'Remote work [verb] [noun] for [role] seeking to improve [X] and [Y] across [Z]' five times. This mechanical parallelism, combined with vague, generic corporate buzzwords and lack of specific detail, is a hallmark of AI-generated filler content.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.95,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.006756756756756757,
+            "repetition": 0.5079365079365079,
+            "sentence_count": 5,
+            "sentence_cv": 0.02197802197802198,
+            "ttr": 0.5714285714285714,
+            "uniformity": 0.9706959706959707,
+            "word_count": 91
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.8318681318681318,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "timestamp": "2026-10-05T02:49:14.455271Z",
+      "uncertainty_reasons": []
+    },
+    {
+      "ai_score": 0.02666666666666668,
+      "appeal_id": null,
+      "appeal_reasoning": null,
+      "attribution": "likely_human",
+      "confidence": 0.9733333333333333,
+      "content_id": "7c19da81-df77-4283-9e08-727d59a512ce",
+      "created_at": "2026-10-05T02:49:14.832597Z",
+      "creator_id": "m5-demo-austen_dialogue",
+      "event_id": 41,
+      "event_type": "decision",
+      "label": "This text shows strong signs of human writing. This automated assessment does not verify authorship. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "original_decision_event_id": null,
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text is a verbatim excerpt from Jane Austen's 'Pride and Prejudice.' It exhibits 19th-century literary syntax, specific historical context, and a distinct authorial voice that predates modern AI generation. The structure is coherent and stylistically consistent with the original human-authored source.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.0,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.040625,
+            "repetition": 0.22222222222222232,
+            "sentence_count": 10,
+            "sentence_cv": 1.120683860605084,
+            "ttr": 0.7,
+            "uniformity": 0.0,
+            "word_count": 123
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.0666666666666667,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "timestamp": "2026-10-05T02:49:14.832597Z",
+      "uncertainty_reasons": []
+    },
+    {
+      "ai_score": 0.20055209897864937,
+      "appeal_id": null,
+      "appeal_reasoning": null,
+      "attribution": "uncertain",
+      "confidence": 0.7994479010213507,
+      "content_id": "6a86f037-8c0e-49ab-ac57-198423201a45",
+      "created_at": "2026-10-05T02:49:15.215317Z",
+      "creator_id": "m5-demo-darwin_formal",
+      "event_id": 42,
+      "event_type": "decision",
+      "label": "We cannot confidently determine whether this text is human-written or AI-generated. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "original_decision_event_id": null,
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits the distinct 19th-century rhetorical style of Charles Darwin, specifically from 'On the Origin of Species.' It features complex sentence structures, formal diction, and specific scientific arguments regarding species distribution and geological history. The voice is consistent with historical human prose, lacking the generic phrasing or repetitive patterns typical of AI generation.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.0,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.014285714285714285,
+            "repetition": 0.15555555555555556,
+            "sentence_count": 4,
+            "sentence_cv": 0.2628068777357606,
+            "ttr": 0.73,
+            "uniformity": 0.6495908296856525,
+            "word_count": 122
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.5013802474466234,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "timestamp": "2026-10-05T02:49:15.215317Z",
+      "uncertainty_reasons": [
+        "signal_disagreement",
+        "middle_range"
+      ]
+    },
+    {
+      "ai_score": 0.20055209897864937,
+      "appeal_id": "65ac389a-d8aa-4f65-b009-3566fc7d9479",
+      "appeal_reasoning": "This is a public-domain passage by Charles Darwin, not generated prose. Please review the historical source and the effect of formal writing on the structural signal.",
+      "attribution": "uncertain",
+      "confidence": 0.7994479010213507,
+      "content_id": "6a86f037-8c0e-49ab-ac57-198423201a45",
+      "created_at": "2026-10-05T02:49:15.215317Z",
+      "creator_id": "m5-demo-darwin_formal",
+      "event_id": 43,
+      "event_type": "appeal",
+      "label": "We cannot confidently determine whether this text is human-written or AI-generated. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "original_decision_event_id": 42,
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits the distinct 19th-century rhetorical style of Charles Darwin, specifically from 'On the Origin of Species.' It features complex sentence structures, formal diction, and specific scientific arguments regarding species distribution and geological history. The voice is consistent with historical human prose, lacking the generic phrasing or repetitive patterns typical of AI generation.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.0,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.014285714285714285,
+            "repetition": 0.15555555555555556,
+            "sentence_count": 4,
+            "sentence_cv": 0.2628068777357606,
+            "ttr": 0.73,
+            "uniformity": 0.6495908296856525,
+            "word_count": 122
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.5013802474466234,
+          "status": "ok"
+        }
+      },
+      "status": "under_review",
+      "timestamp": "2026-10-05T02:49:15.219491Z",
+      "uncertainty_reasons": [
+        "signal_disagreement",
+        "middle_range"
+      ]
+    }
+  ]
+}

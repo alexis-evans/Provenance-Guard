@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Provenance Guard{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header><a href="{{ url_for('dashboard') }}">Provenance Guard</a><span>Text assessments &amp; creator reviews</span></header>
+<main>{% if config.get("DEMO_MODE") %}<section role="note"><strong>Synthetic demonstration only.</strong> Scores and certificate review are simulated. No live model calls or real authorship verification.</section>{% endif %}{% block content %}{% endblock %}</main>
+<footer>Automated scores describe writing patterns. They do not prove authorship.</footer>
+</body>
+</html>

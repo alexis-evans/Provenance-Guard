@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Submission · Provenance Guard{% endblock %}
+{% block content %}
+<p><a href="{{ url_for('dashboard') }}">← Dashboard</a></p>
+<h1>Submission by {{ content.creator_id }}</h1>
+<p class="id">{{ content.content_id }}</p>
+<section><h2>Automated transparency label</h2>
+<p>{{ content.label }}</p><p>Status: {{ content.status|replace('_', ' ') }}</p>
+{% if content.review_notice %}<p>{{ content.review_notice }}</p>{% endif %}
+<p>Ensemble AI score: <strong>{{ content.ai_score if content.ai_score is not none else 'Unavailable' }}</strong></p>
+<p>Policy: <code>{{ content.policy_version|default('legacy') }}</code></p>
+{% if content.uncertainty_reasons %}<p>Reasons: {{ content.uncertainty_reasons|join(', ')|replace('_', ' ') }}</p>{% endif %}
+<div class="table-wrap"><table><thead><tr><th>Signal</th><th>AI score</th><th>Weight</th></tr></thead>
+<tbody>{% for name, signal in content.signals.items() %}<tr><td>{{ name }}</td><td>{{ signal.score if signal.score is not none else 'Unavailable' }}</td><td>{% if content.weights is defined %}{{ (content.weights[name] * 100)|round|int }}%{% else %}See historical policy{% endif %}</td></tr>{% endfor %}</tbody></table></div>
+</section>
+<section><h2>Provenance certificate</h2>
+{% if content.certificate %}
+<p><span class="badge">Verified human</span></p>
+<p>{{ content.certificate.basis }}.</p><p>{{ content.certificate.scope }}.</p>
+<dl><dt>Certificate</dt><dd>{{ content.certificate.certificate_id }}</dd>
+<dt>Reviewer</dt><dd>{{ content.certificate.reviewer }}</dd><dt>Issued</dt><dd>{{ content.certificate.issued_at }}</dd>
+<dt>Submitted text SHA-256</dt><dd class="id">{{ content.certificate.text_sha256 }}</dd></dl>
+{% else %}<p>No certificate. A creator can request a separate review of their draft and writing process through <code>POST /verification/request</code>.</p>{% endif %}
+</section>
+{% endblock %}

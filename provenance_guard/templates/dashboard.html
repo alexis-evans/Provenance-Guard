@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Analytics · Provenance Guard{% endblock %}
+{% block content %}
+<h1>Analytics dashboard</h1>
+<p>All saved submissions. Refresh this page to see new activity.</p>
+<div class="cards">
+  <section><h2>Submissions</h2><strong class="metric">{{ data.total }}</strong><p>Each submission counted once.</p></section>
+  <section><h2>Appeal rate</h2><strong class="metric">{{ data.appeal_rate }}%</strong><p>{{ data.appealed }} of {{ data.total }} submissions appealed.</p></section>
+  <section><h2>Certificate rate</h2><strong class="metric">{{ data.certificate_rate }}%</strong><p>{{ data.certified }} of {{ data.total }} submissions verified by a reviewer.</p></section>
+</div>
+<section><h2>Detection patterns</h2>
+{% if not data.total %}<p>No submissions yet. Send text to <code>POST /submit</code> to get started.</p>{% endif %}
+{% for name, verdict in data.verdicts.items() %}
+<div class="pattern"><label for="{{ name }}">{{ name|replace('_', ' ')|title }}: {{ verdict.count }} ({{ verdict.percent }}%)</label>
+<meter id="{{ name }}" min="0" max="100" value="{{ verdict.percent }}">{{ verdict.percent }}%</meter></div>
+{% endfor %}
+<p>These are detector verdicts, not known authorship or measured accuracy.</p>
+</section>
+<section><h2>Policy versions</h2>
+{% for policy, count in data.policies.items() %}<p><code>{{ policy }}</code>: {{ count }} submissions</p>{% else %}<p>No decisions saved.</p>{% endfor %}
+</section>
+<section><h2>Latest submissions</h2><div class="table-wrap"><table>
+<thead><tr><th>Creator / content</th><th>Assessment</th><th>Review status</th><th>Provenance credential</th></tr></thead>
+<tbody>{% for item in data.recent %}<tr>
+<td><a href="{{ url_for('content_view', content_id=item.content_id) }}">{{ item.creator_id }}</a><small>{{ item.content_id }}</small></td>
+<td>{{ item.attribution|replace('_', ' ') }}</td><td>{{ item.status|replace('_', ' ') }}</td>
+<td>{% if item.certificate_id %}<span class="badge">Verified human</span>{% else %}No certificate{% endif %}</td>
+</tr>{% else %}<tr><td colspan="4">No submissions yet.</td></tr>{% endfor %}</tbody>
+</table></div></section>
+{% endblock %}

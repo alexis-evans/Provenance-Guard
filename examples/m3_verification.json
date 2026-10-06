@@ -1,0 +1,298 @@
+{
+  "verified_at": "2026-10-05T01:59:59.483716Z",
+  "model": "qwen/qwen3.8-27b",
+  "model_list_verified": true,
+  "transport": "Live Groq API and real loopback HTTP Flask server",
+  "input_source": "examples/m3_inputs.json; illustrative samples, not an accuracy benchmark",
+  "direct_adapter_checks": [
+    {
+      "name": "formal_ai_style",
+      "signal": {
+        "name": "groq",
+        "status": "ok",
+        "score": 0.95,
+        "details": {
+          "model": "qwen/qwen3.8-27b",
+          "prompt_version": "groq-v1",
+          "reasoning_effort": "none",
+          "rationale": "The text exhibits classic AI hallmarks: vague, high-level abstractions ('transformative paradigm shift'), lack of specific evidence or concrete examples, and a formulaic structure relying on generic transitional phrases ('It is important to note,' 'Furthermore'). The tone is sterile and overly balanced, typical of automated summarization or introductory boilerplate."
+        },
+        "error_code": null
+      }
+    },
+    {
+      "name": "informal_human_style",
+      "signal": {
+        "name": "groq",
+        "status": "ok",
+        "score": 0.1,
+        "details": {
+          "model": "qwen/qwen3.8-27b",
+          "prompt_version": "groq-v1",
+          "reasoning_effort": "none",
+          "rationale": "The text exhibits strong markers of authentic human casual speech, including lowercase formatting, colloquialisms ('honestly?', 'WAY too much'), and specific sensory details (thirst for three hours). The tone is conversational and lacks the structured, polished, or generic phrasing typical of AI generation."
+        },
+        "error_code": null
+      }
+    },
+    {
+      "name": "borderline_formal",
+      "signal": {
+        "name": "groq",
+        "status": "ok",
+        "score": 0.8,
+        "details": {
+          "model": "qwen/qwen3.8-27b",
+          "prompt_version": "groq-v1",
+          "reasoning_effort": "none",
+          "rationale": "The text exhibits high-level abstraction and generic phrasing typical of AI summaries. It uses broad, non-specific claims ('extensively studied,' 'fundamental tension') without concrete examples, data, or unique voice. The structure is a standard introductory paragraph found in many automated economic overviews, lacking the specific nuance or idiosyncratic style of human academic writing."
+        },
+        "error_code": null
+      }
+    }
+  ],
+  "submissions": [
+    {
+      "name": "formal_ai_style",
+      "http_status": 200,
+      "response": {
+        "ai_score": null,
+        "attribution": "uncertain",
+        "confidence": null,
+        "content_id": "e02962e1-a978-460d-ace9-827dbe2a9fc5",
+        "created_at": "2026-10-05T01:59:55.415695Z",
+        "creator_id": "m3-demo-formal_ai_style",
+        "label": "Analysis is incomplete: the multi-signal detector is not yet implemented. No authorship determination has been made.",
+        "policy_version": "m3-single-signal",
+        "signals": {
+          "groq": {
+            "details": {
+              "model": "qwen/qwen3.8-27b",
+              "prompt_version": "groq-v1",
+              "rationale": "The text exhibits classic AI hallmarks: vague, high-level abstractions ('transformative paradigm shift'), lack of specific evidence or concrete examples, and a formulaic structure relying on generic transitional phrases ('It is important to note,' 'Furthermore'). The tone is sterile and overly balanced, typical of automated summarization or introductory boilerplate.",
+              "reasoning_effort": "none"
+            },
+            "error_code": null,
+            "name": "groq",
+            "score": 0.95,
+            "status": "ok"
+          },
+          "stylometry": {
+            "details": {},
+            "error_code": "not_implemented",
+            "name": "stylometry",
+            "score": null,
+            "status": "unavailable"
+          }
+        },
+        "status": "classified",
+        "uncertainty_reasons": [
+          "signal_unavailable"
+        ]
+      }
+    },
+    {
+      "name": "informal_human_style",
+      "http_status": 200,
+      "response": {
+        "ai_score": null,
+        "attribution": "uncertain",
+        "confidence": null,
+        "content_id": "20d71f72-6610-4221-82df-67f31cd6d171",
+        "created_at": "2026-10-05T01:59:55.732642Z",
+        "creator_id": "m3-demo-informal_human_style",
+        "label": "Analysis is incomplete: the multi-signal detector is not yet implemented. No authorship determination has been made.",
+        "policy_version": "m3-single-signal",
+        "signals": {
+          "groq": {
+            "details": {
+              "model": "qwen/qwen3.8-27b",
+              "prompt_version": "groq-v1",
+              "rationale": "The text exhibits strong markers of authentic human casual speech, including lowercase formatting, colloquialisms ('honestly?', 'like three hours'), and specific, subjective sensory details (thirst, sodium). The tone is conversational and lacks the structured, balanced, or overly polished phrasing typical of AI generation.",
+              "reasoning_effort": "none"
+            },
+            "error_code": null,
+            "name": "groq",
+            "score": 0.1,
+            "status": "ok"
+          },
+          "stylometry": {
+            "details": {},
+            "error_code": "not_implemented",
+            "name": "stylometry",
+            "score": null,
+            "status": "unavailable"
+          }
+        },
+        "status": "classified",
+        "uncertainty_reasons": [
+          "signal_unavailable"
+        ]
+      }
+    },
+    {
+      "name": "borderline_formal",
+      "http_status": 200,
+      "response": {
+        "ai_score": null,
+        "attribution": "uncertain",
+        "confidence": null,
+        "content_id": "dd6fa38d-fcf0-42e6-9965-5df810fc67ac",
+        "created_at": "2026-10-05T01:59:59.477837Z",
+        "creator_id": "m3-demo-borderline_formal",
+        "label": "Analysis is incomplete: the multi-signal detector is not yet implemented. No authorship determination has been made.",
+        "policy_version": "m3-single-signal",
+        "signals": {
+          "groq": {
+            "details": {
+              "model": "qwen/qwen3.8-27b",
+              "prompt_version": "groq-v1",
+              "rationale": "The text exhibits high-level abstraction and generic phrasing typical of AI summaries. It uses broad, non-specific claims ('extensively studied,' 'fundamental tension') without concrete examples, data, or unique voice. The structure is a standard introductory paragraph found in many automated economic overviews, lacking the specific nuance or idiosyncratic style of human academic writing.",
+              "reasoning_effort": "none"
+            },
+            "error_code": null,
+            "name": "groq",
+            "score": 0.8,
+            "status": "ok"
+          },
+          "stylometry": {
+            "details": {},
+            "error_code": "not_implemented",
+            "name": "stylometry",
+            "score": null,
+            "status": "unavailable"
+          }
+        },
+        "status": "classified",
+        "uncertainty_reasons": [
+          "signal_unavailable"
+        ]
+      }
+    }
+  ],
+  "audit_events": [
+    {
+      "ai_score": null,
+      "appeal_id": null,
+      "appeal_reasoning": null,
+      "attribution": "uncertain",
+      "confidence": null,
+      "content_id": "e02962e1-a978-460d-ace9-827dbe2a9fc5",
+      "created_at": "2026-10-05T01:59:55.415695Z",
+      "creator_id": "m3-demo-formal_ai_style",
+      "event_id": 1,
+      "event_type": "decision",
+      "label": "Analysis is incomplete: the multi-signal detector is not yet implemented. No authorship determination has been made.",
+      "original_decision_event_id": null,
+      "policy_version": "m3-single-signal",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits classic AI hallmarks: vague, high-level abstractions ('transformative paradigm shift'), lack of specific evidence or concrete examples, and a formulaic structure relying on generic transitional phrases ('It is important to note,' 'Furthermore'). The tone is sterile and overly balanced, typical of automated summarization or introductory boilerplate.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.95,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {},
+          "error_code": "not_implemented",
+          "name": "stylometry",
+          "score": null,
+          "status": "unavailable"
+        }
+      },
+      "status": "classified",
+      "timestamp": "2026-10-05T01:59:55.415695Z",
+      "uncertainty_reasons": [
+        "signal_unavailable"
+      ]
+    },
+    {
+      "ai_score": null,
+      "appeal_id": null,
+      "appeal_reasoning": null,
+      "attribution": "uncertain",
+      "confidence": null,
+      "content_id": "20d71f72-6610-4221-82df-67f31cd6d171",
+      "created_at": "2026-10-05T01:59:55.732642Z",
+      "creator_id": "m3-demo-informal_human_style",
+      "event_id": 2,
+      "event_type": "decision",
+      "label": "Analysis is incomplete: the multi-signal detector is not yet implemented. No authorship determination has been made.",
+      "original_decision_event_id": null,
+      "policy_version": "m3-single-signal",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits strong markers of authentic human casual speech, including lowercase formatting, colloquialisms ('honestly?', 'like three hours'), and specific, subjective sensory details (thirst, sodium). The tone is conversational and lacks the structured, balanced, or overly polished phrasing typical of AI generation.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.1,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {},
+          "error_code": "not_implemented",
+          "name": "stylometry",
+          "score": null,
+          "status": "unavailable"
+        }
+      },
+      "status": "classified",
+      "timestamp": "2026-10-05T01:59:55.732642Z",
+      "uncertainty_reasons": [
+        "signal_unavailable"
+      ]
+    },
+    {
+      "ai_score": null,
+      "appeal_id": null,
+      "appeal_reasoning": null,
+      "attribution": "uncertain",
+      "confidence": null,
+      "content_id": "dd6fa38d-fcf0-42e6-9965-5df810fc67ac",
+      "created_at": "2026-10-05T01:59:59.477837Z",
+      "creator_id": "m3-demo-borderline_formal",
+      "event_id": 3,
+      "event_type": "decision",
+      "label": "Analysis is incomplete: the multi-signal detector is not yet implemented. No authorship determination has been made.",
+      "original_decision_event_id": null,
+      "policy_version": "m3-single-signal",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "qwen/qwen3.8-27b",
+            "prompt_version": "groq-v1",
+            "rationale": "The text exhibits high-level abstraction and generic phrasing typical of AI summaries. It uses broad, non-specific claims ('extensively studied,' 'fundamental tension') without concrete examples, data, or unique voice. The structure is a standard introductory paragraph found in many automated economic overviews, lacking the specific nuance or idiosyncratic style of human academic writing.",
+            "reasoning_effort": "none"
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.8,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {},
+          "error_code": "not_implemented",
+          "name": "stylometry",
+          "score": null,
+          "status": "unavailable"
+        }
+      },
+      "status": "classified",
+      "timestamp": "2026-10-05T01:59:59.477837Z",
+      "uncertainty_reasons": [
+        "signal_unavailable"
+      ]
+    }
+  ]
+}

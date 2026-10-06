@@ -1,0 +1,172 @@
+{
+  "verified_at": "2026-10-05T02:49:13.908746Z",
+  "transport": "Real loopback HTTP; real Flask-Limiter; real temporary SQLite",
+  "detector": "Controlled Groq fixture; real stylometry. No provider calls.",
+  "limits": "10 per minute;100 per day",
+  "key": "request.remote_addr",
+  "storage": "memory://",
+  "strategy": "fixed-window",
+  "status_codes": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    429,
+    429
+  ],
+  "blocked_responses": [
+    {
+      "status": 429,
+      "body": {
+        "error": {
+          "code": "rate_limited",
+          "message": "Submission limit exceeded. Retry after the time in Retry-After."
+        }
+      },
+      "retry_after": "60"
+    },
+    {
+      "status": 429,
+      "body": {
+        "error": {
+          "code": "rate_limited",
+          "message": "Submission limit exceeded. Retry after the time in Retry-After."
+        }
+      },
+      "retry_after": "60"
+    }
+  ],
+  "provider_adapter_invocations": 10,
+  "decision_audit_events": 10,
+  "label_checks": [
+    {
+      "ai_score": 0.9027472527472528,
+      "attribution": "likely_ai",
+      "confidence": 0.9027472527472528,
+      "content_id": "0212a4fd-c958-4b41-b44f-ac83be59f520",
+      "created_at": "2026-10-05T02:49:13.895985Z",
+      "creator_id": "rate-limit-test",
+      "label": "This text shows strong signs of AI generation. This automated assessment can be wrong. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "controlled-fixture-not-live",
+            "rationale": "Deterministic fixture for label and limiter verification."
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.95,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.006756756756756757,
+            "repetition": 0.5079365079365079,
+            "sentence_count": 5,
+            "sentence_cv": 0.02197802197802198,
+            "ttr": 0.5714285714285714,
+            "uniformity": 0.9706959706959707,
+            "word_count": 91
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.8318681318681318,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "uncertainty_reasons": []
+    },
+    {
+      "ai_score": 0.02666666666666668,
+      "attribution": "likely_human",
+      "confidence": 0.9733333333333333,
+      "content_id": "ea034bb7-6e6c-40bb-b1d0-f5004912ee24",
+      "created_at": "2026-10-05T02:49:13.897802Z",
+      "creator_id": "rate-limit-test",
+      "label": "This text shows strong signs of human writing. This automated assessment does not verify authorship. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "controlled-fixture-not-live",
+            "rationale": "Deterministic fixture for label and limiter verification."
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.0,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.040625,
+            "repetition": 0.22222222222222232,
+            "sentence_count": 10,
+            "sentence_cv": 1.120683860605084,
+            "ttr": 0.7,
+            "uniformity": 0.0,
+            "word_count": 123
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.0666666666666667,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "uncertainty_reasons": []
+    },
+    {
+      "ai_score": 0.20055209897864937,
+      "attribution": "uncertain",
+      "confidence": 0.7994479010213507,
+      "content_id": "36d1a51a-667e-4ab8-9d35-afecfc906b72",
+      "created_at": "2026-10-05T02:49:13.899444Z",
+      "creator_id": "rate-limit-test",
+      "label": "We cannot confidently determine whether this text is human-written or AI-generated. Creators can appeal.",
+      "label_version": "transparency-v1",
+      "policy_version": "heuristic-v1",
+      "signals": {
+        "groq": {
+          "details": {
+            "model": "controlled-fixture-not-live",
+            "rationale": "Deterministic fixture for label and limiter verification."
+          },
+          "error_code": null,
+          "name": "groq",
+          "score": 0.0,
+          "status": "ok"
+        },
+        "stylometry": {
+          "details": {
+            "punctuation_density": 0.014285714285714285,
+            "repetition": 0.15555555555555556,
+            "sentence_count": 4,
+            "sentence_cv": 0.2628068777357606,
+            "ttr": 0.73,
+            "uniformity": 0.6495908296856525,
+            "word_count": 122
+          },
+          "error_code": null,
+          "name": "stylometry",
+          "score": 0.5013802474466234,
+          "status": "ok"
+        }
+      },
+      "status": "classified",
+      "uncertainty_reasons": [
+        "signal_disagreement",
+        "middle_range"
+      ]
+    }
+  ]
+}
